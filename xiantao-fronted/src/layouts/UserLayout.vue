@@ -3,7 +3,7 @@
     <a-layout style="min-height: 100vh;">
       <a-layout-header class="header">
         <a-space>
-          <img src="https://img.zcool.cn/community/01c0085c93c9afa801208f8b043aab.jpg" class="logo"/>
+          <img src="../assets/img.png" class="logo"/>
           <div >闲淘</div>
         </a-space>
       </a-layout-header>
