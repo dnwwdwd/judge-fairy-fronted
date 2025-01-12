@@ -219,7 +219,7 @@ const handleSubmit = async () => {
     const res = await QuestionControllerService.addQuestionUsingPost(
       form.value
     );
-    if (res.const == 0) {
+    if (res.code == 0) {
       message.success("题目创建成功");
     } else {
       message.error("题目创建失败" + (res.message ? `，${res.message}` : ""));

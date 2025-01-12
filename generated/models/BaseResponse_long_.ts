@@ -5,6 +5,7 @@
 export type BaseResponse_long_ = {
     code?: number;
     data?: number;
+    description?: string;
     message?: string;
 };
 

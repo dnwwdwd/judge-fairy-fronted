@@ -3,18 +3,13 @@
 /* tslint:disable */
 /* eslint-disable */
 export type PostQueryRequest = {
-    content?: string;
-    current?: number;
-    favourUserId?: number;
-    id?: number;
-    notId?: number;
-    orTags?: Array<string>;
+    asc?: string;
+    maxPrice?: number;
+    minPrice?: number;
+    orderName?: string;
+    pageNum?: number;
     pageSize?: number;
-    searchText?: string;
-    sortField?: string;
-    sortOrder?: string;
-    tags?: Array<string>;
-    title?: string;
-    userId?: number;
+    searchParam?: string;
+    tagList?: Array<string>;
 };
 

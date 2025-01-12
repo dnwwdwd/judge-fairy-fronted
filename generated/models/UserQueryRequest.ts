@@ -3,15 +3,18 @@
 /* tslint:disable */
 /* eslint-disable */
 export type UserQueryRequest = {
-    current?: number;
-    id?: number;
-    mpOpenId?: string;
+    asc?: string;
+    email?: string;
+    gender?: number;
+    likedTags?: Array<string>;
+    orderName?: string;
+    pageNum?: number;
     pageSize?: number;
-    sortField?: string;
-    sortOrder?: string;
-    unionId?: string;
-    userName?: string;
-    userProfile?: string;
-    userRole?: string;
+    phone?: string;
+    profile?: string;
+    searchParam?: string;
+    userAccount?: string;
+    userStatus?: number;
+    username?: string;
 };
 

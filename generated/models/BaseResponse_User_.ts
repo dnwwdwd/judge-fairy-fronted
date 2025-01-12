@@ -6,6 +6,7 @@ import type { User } from './User';
 export type BaseResponse_User_ = {
     code?: number;
     data?: User;
+    description?: string;
     message?: string;
 };
 

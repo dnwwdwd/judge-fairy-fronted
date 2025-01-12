@@ -2,26 +2,47 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { BaseResponse_int_ } from '../models/BaseResponse_int_';
-import type { PostThumbAddRequest } from '../models/PostThumbAddRequest';
+import type { BaseResponse_boolean_ } from '../models/BaseResponse_boolean_';
+import type { PostThumbRequest } from '../models/PostThumbRequest';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class PostThumbControllerService {
     /**
-     * doThumb
-     * @param postThumbAddRequest postThumbAddRequest
-     * @returns BaseResponse_int_ OK
+     * addPostThumb
+     * @param postThumbRequest postThumbRequest
+     * @returns BaseResponse_boolean_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static doThumbUsingPost(
-        postThumbAddRequest: PostThumbAddRequest,
-    ): CancelablePromise<BaseResponse_int_ | any> {
+    public static addPostThumbUsingPost(
+        postThumbRequest: PostThumbRequest,
+    ): CancelablePromise<BaseResponse_boolean_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/post_thumb/',
-            body: postThumbAddRequest,
+            url: '/api/post_thumb/add',
+            body: postThumbRequest,
+            errors: {
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Not Found`,
+            },
+        });
+    }
+    /**
+     * deletePostThumb
+     * @param postThumbRequest postThumbRequest
+     * @returns BaseResponse_boolean_ OK
+     * @returns any Created
+     * @throws ApiError
+     */
+    public static deletePostThumbUsingPost(
+        postThumbRequest: PostThumbRequest,
+    ): CancelablePromise<BaseResponse_boolean_ | any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/post_thumb/delete',
+            body: postThumbRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,

@@ -3,17 +3,20 @@
 /* tslint:disable */
 /* eslint-disable */
 export type User = {
+    avatarUrl?: string;
     createTime?: string;
+    email?: string;
+    gender?: number;
     id?: number;
     isDelete?: number;
-    mpOpenId?: string;
-    unionId?: string;
+    likedTags?: string;
+    phone?: string;
+    profile?: string;
     updateTime?: string;
     userAccount?: string;
-    userAvatar?: string;
-    userName?: string;
     userPassword?: string;
-    userProfile?: string;
     userRole?: string;
+    userStatus?: number;
+    username?: string;
 };
 

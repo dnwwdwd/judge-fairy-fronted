@@ -2,29 +2,26 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { BaseResponse_int_ } from '../models/BaseResponse_int_';
-import type { BaseResponse_Page_PostVO_ } from '../models/BaseResponse_Page_PostVO_';
-import type { PostFavourAddRequest } from '../models/PostFavourAddRequest';
-import type { PostFavourQueryRequest } from '../models/PostFavourQueryRequest';
-import type { PostQueryRequest } from '../models/PostQueryRequest';
+import type { BaseResponse_boolean_ } from '../models/BaseResponse_boolean_';
+import type { PostFavourRequest } from '../models/PostFavourRequest';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class PostFavourControllerService {
     /**
-     * doPostFavour
-     * @param postFavourAddRequest postFavourAddRequest
-     * @returns BaseResponse_int_ OK
+     * addPostFavour
+     * @param postFavourRequest postFavourRequest
+     * @returns BaseResponse_boolean_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static doPostFavourUsingPost(
-        postFavourAddRequest: PostFavourAddRequest,
-    ): CancelablePromise<BaseResponse_int_ | any> {
+    public static addPostFavourUsingPost(
+        postFavourRequest: PostFavourRequest,
+    ): CancelablePromise<BaseResponse_boolean_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/post_favour/',
-            body: postFavourAddRequest,
+            url: '/api/post_favour/add',
+            body: postFavourRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,
@@ -33,40 +30,19 @@ export class PostFavourControllerService {
         });
     }
     /**
-     * listFavourPostByPage
-     * @param postFavourQueryRequest postFavourQueryRequest
-     * @returns BaseResponse_Page_PostVO_ OK
+     * deletePostFavour
+     * @param postFavourRequest postFavourRequest
+     * @returns BaseResponse_boolean_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static listFavourPostByPageUsingPost(
-        postFavourQueryRequest: PostFavourQueryRequest,
-    ): CancelablePromise<BaseResponse_Page_PostVO_ | any> {
+    public static deletePostFavourUsingPost(
+        postFavourRequest: PostFavourRequest,
+    ): CancelablePromise<BaseResponse_boolean_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/post_favour/list/page',
-            body: postFavourQueryRequest,
-            errors: {
-                401: `Unauthorized`,
-                403: `Forbidden`,
-                404: `Not Found`,
-            },
-        });
-    }
-    /**
-     * listMyFavourPostByPage
-     * @param postQueryRequest postQueryRequest
-     * @returns BaseResponse_Page_PostVO_ OK
-     * @returns any Created
-     * @throws ApiError
-     */
-    public static listMyFavourPostByPageUsingPost(
-        postQueryRequest: PostQueryRequest,
-    ): CancelablePromise<BaseResponse_Page_PostVO_ | any> {
-        return __request(OpenAPI, {
-            method: 'POST',
-            url: '/api/post_favour/my/list/page',
-            body: postQueryRequest,
+            url: '/api/post_favour/delete',
+            body: postFavourRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,

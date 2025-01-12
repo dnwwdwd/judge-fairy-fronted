@@ -4,6 +4,7 @@
 /* eslint-disable */
 export type PostAddRequest = {
     content?: string;
+    price?: number;
     tags?: Array<string>;
     title?: string;
 };
